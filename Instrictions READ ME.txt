@@ -1,0 +1,63 @@
+Project Introduction
++ Imagine you're a talented developer at "Future Homes Realty", a forward-thinking real estate company based in Seattle, Washington. 
+In an industry where personalization is key to customer satisfaction, your company wants to revolutionize how clients interact with real estate listings. 
+The goal is to create a personalized experience for each buyer, making the property search process more engaging and tailored to individual preferences.
+
+The Challenge
++ The task is to develop an innovative application named "HomeMatch". 
+This application leverages large language models (LLMs) and vector databases to transform standard real estate listings into personalized narratives that resonate with potential buyers' unique preferences and needs.
+
+Core Components of "HomeMatch"
+
+1.Understanding Buyer Preferences:
++ Buyers will input their requirements and preferences, such as location, property type, budget, amenities, and lifestyle choices.
++ The application uses LLMs to interpret these inputs in natural language, understanding nuanced requests beyond basic filters.
+
+2.Integrating with a Vector Database:
++ Connect "HomeMatch" with a vector database, where all available property listings are stored.
++ Utilize vector embeddings to match properties with buyer preferences, focusing on aspects like neighborhood vibes, architectural styles, and proximity to specific amenities.
+
+3. Personalized Listing Description Generation:
++ For each matched listing, use an LLM to rewrite the description in a way that highlights aspects most relevant to the buyer’s preferences.
++ Ensure personalization emphasizes characteristics appealing to the buyer without altering factual information about the property.
+
+4. Listing Presentation:
+ + Output the personalized listing(s) as a text description of the listing.
+
+Required libraries
+langchain=0.0.305
+openai=0.28.1
+chromadb==0.4.12
+jupyter==1.0.0
+
+NOTE: Reunning the notebook will require an Openai API key.
+Simply replace "YOUR API KEY" from the following code within the notebook
+
+# Setting up the OpenAI API key
+os.environ["OPENAI_API_KEY"] = "YOUR API KEY"
+os.environ["OPENAI_API_BASE"] = "https://openai.vocareum.com/v1"
+
+
+How to execute
+1 - Run the jupyter notebook in Anaconda or preferred IDE platform
+2 - Install the required libraries
+3 - Define the required buyer proferences within the code
+e.g. questions = [   
+    "How big do you want your house to be?", 
+    "What are the 3 most important things for you in choosing this property?", 
+    "Which amenities would you like?", 
+    "Which transportation options are important to you?",
+    "How urban do you want your neighborhood to be?",]
+
+4- Retrieve the generated output for the listings
+e.g. Personalized Listing 5:
+Neighborhood: Capitol Hill, Price: 500000, Bedrooms: 2, Bathrooms: 1, House Size: 1000
+
+Description: "This charming bungalow in the heart of Capitol Hill is the perfect starter home. 
+With two cozy bedrooms, a spacious living room, and a potential to convert the extra space into a third bedroom, this house offers the comfort and flexibility you desire. 
+The kitchen is perfect for preparing family meals and entertaining guests, and the backyard provides ample space for gardening. 
+The quiet neighborhood is close to good local schools and convenient shopping options. 
+Additionally, the two-car garage and modern, energy-efficient heating system add to the convenience and sustainability of this home. 
+With easy access to a reliable bus line, proximity to a major highway, and bike-friendly roads, you can easily navigate the area. 
+Enjoy the perfect balance between suburban tranquility and access to urban amenities like restaurants and theaters. 
+Don't miss out on this opportunity to make this house your dream home!"
